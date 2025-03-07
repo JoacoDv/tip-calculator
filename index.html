@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  
+  <title>Tip calculator app</title>
+
+  <style>
+    .space-mono-bold {
+      font-family: "Space Mono", monospace;
+      font-weight: 700;
+      font-style: normal;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="calculator">
+    <section>
+      <label for="tip">Bill</label>
+      <input type="number" name="tip">
+
+      <label>Select Tip %</label>
+      <div class="grid">
+        <label class="btn-percentage"><input type="checkbox" class="checkbox">5%</label>
+        <label class="btn-percentage"><input type="checkbox" class="checkbox">10%</label>
+        <label class="btn-percentage"><input type="checkbox" class="checkbox">15%</label>
+        <label class="btn-percentage"><input type="checkbox" class="checkbox">25%</label>
+        <label class="btn-percentage"><input type="checkbox" class="checkbox">50%</label>
+        <label class="btn-percentage"><input type="checkbox" class="checkbox">Custom%</label>
+      </div>
+
+      <label for="people">Number of People</label>
+      <input type="number" name="people">
+    </section>
+    <section>
+      <div>
+        <div>
+          <p>Tip Amount</p>
+          <p>/ person</p>
+        </div>
+        <h2 id="tip-person"></h2>
+      </div>
+
+      <div>
+        <div>
+          <p>Total</p>
+          <p>/ person</p>
+        </div>
+        <h2 id="total-tip"></h2>
+      </div>
+
+      <button>Reset</button>
+    </section>
+  </main>
+</body>
+</html>
