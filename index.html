@@ -8,56 +8,53 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-  
+  <link rel="stylesheet" href="styles.css"> 
   <title>Tip calculator app</title>
 
-  <style>
-    .space-mono-bold {
-      font-family: "Space Mono", monospace;
-      font-weight: 700;
-      font-style: normal;
-    }
-  </style>
 </head>
 <body>
-
+  <header>
+    <p>SPLI</p>
+    <p>TTER</p>
+  </header>
   <main class="calculator">
-    <section>
-      <label for="tip">Bill</label>
-      <input type="number" name="tip">
+    <section class="parametrers">
+      <label class="first-text"" for="tip">Bill</label>
+      <input type="number" name="tip" placeholder="0.00" class="input amount">
 
-      <label>Select Tip %</label>
+      <label class="second-text">Select Tip %</label>
       <div class="grid">
-        <label class="btn-percentage"><input type="checkbox" class="checkbox">5%</label>
-        <label class="btn-percentage"><input type="checkbox" class="checkbox">10%</label>
-        <label class="btn-percentage"><input type="checkbox" class="checkbox">15%</label>
-        <label class="btn-percentage"><input type="checkbox" class="checkbox">25%</label>
-        <label class="btn-percentage"><input type="checkbox" class="checkbox">50%</label>
-        <label class="btn-percentage"><input type="checkbox" class="checkbox">Custom%</label>
+        <label class="btn-percentage"><input type="checkbox" class="checkbox one">5%</label>
+        <label class="btn-percentage"><input type="checkbox" class="checkbox two">10%</label>
+        <label class="btn-percentage"><input type="checkbox" class="checkbox three">15%</label>
+        <label class="btn-percentage"><input type="checkbox" class="checkbox four">25%</label>
+        <label class="btn-percentage"><input type="checkbox" class="checkbox five">50%</label>
+        <label><input type="number" id="custom" class="custom" placeholder="Custom%"></label>
       </div>
 
-      <label for="people">Number of People</label>
-      <input type="number" name="people">
+      <label for="people" class="third-text"">Number of People</label>
+      <input type="number" name="people" placeholder="0" class="input person">
     </section>
-    <section>
-      <div>
+    <section class="results">
+      <div class="container">
         <div>
           <p>Tip Amount</p>
           <p>/ person</p>
         </div>
-        <h2 id="tip-person"></h2>
+        <h2 id="tip-person">$0.00</h2>
       </div>
 
-      <div>
+      <div class="container">
         <div>
           <p>Total</p>
           <p>/ person</p>
         </div>
-        <h2 id="total-tip"></h2>
+        <h2 id="total-tip">$0.00</h2>
       </div>
 
-      <button>Reset</button>
+      <button id="reset">Reset</button>
     </section>
   </main>
+  <script src="main.js"></script>
 </body>
 </html>

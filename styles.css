@@ -1,0 +1,265 @@
+.space-mono-bold {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Space Mono";
+    font-weight: 700;
+}
+
+body {
+    background-color:hsl(185, 41%, 84%) ;
+    --after-content: "";
+    --left-percentage: "";
+}
+
+header p:nth-child(1) {
+    margin: 15vh auto 0px auto;
+}
+
+header p {
+    text-align: center;
+    font-size: 24px;
+    color: hsl(183, 100%, 15%);
+    letter-spacing: 15px;
+}
+
+/* ---------PANTALLA DE CALCULOS------------ */
+
+.calculator {
+    display: flex;
+    padding: 2%;
+    width: 800px;
+    height: 400px;
+    background-color: white;
+    margin: 60px auto;
+    gap: 5%;
+    justify-content: center;
+    border-radius: 24px;
+}
+
+.parametrers {
+    width: 45%;
+    position: relative;
+}
+
+.parametrers label {
+    color:hsl(183, 100%, 15%) ;
+}
+
+input, label {
+    display: block;
+}
+
+input, button {
+    cursor: pointer;
+}
+
+input:focus {
+    border: 1px solid hsl(172, 67%, 70%);
+}
+
+.input {
+    width: 100%;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: hsl(189, 41%, 97%);
+    outline: none;
+    text-align: right;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+    background-position: left 10px center;
+}
+
+.first-text::after {
+    content: var(--after-content);
+    position: absolute;
+    color: rgb(241, 63, 63);
+    font-size: 16px;
+    top: 5%;
+    left: var(--left-percentage);
+}
+
+.second-text::after {
+    content: var(--after-content);
+    position: absolute;
+    color: rgb(241, 63, 63);
+    font-size: 16px;
+    top: 80%;
+    left: var(--left-percentage);
+}
+
+input::placeholder {
+    color: hsl(183, 100%, 15%);
+    font-size: 24px;
+    opacity: .5;
+    text-align: right;
+}
+
+/* Para navegadores Webkit (Chrome, Safari, Edge) */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Para Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.amount {
+    background-image: url('./images/icon-dollar.svg');
+}
+
+.person {
+    background-image: url('./images/icon-person.svg');
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row: repeat(2, 1fr);
+    width: 100%;
+    height: auto;
+    gap: 10px
+    
+}
+
+.checkbox {
+    display: none;
+}
+
+.btn-percentage {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    font-size: 24px;
+    font-weight: 400;
+    padding: 10px;
+    background-color: hsl(183, 100%, 15%);
+    color: hsl(189, 41%, 97%)!important;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.btn-percentage:active {
+    background-color: hsl(172, 67%, 70%);
+}
+
+.custom {
+    width: 100%;
+    height: 40px;
+    padding: 5px 10px;
+    background-color: hsl(189, 41%, 97%);
+    border: none;
+    outline: none;
+}
+
+.first-text {
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+}
+
+.second-text {
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.third-text {
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+/* --------PANTALLA DE RESULTADOS---------- */
+
+.results {
+    background-color: hsl(183, 100%, 15%);
+    width: 45%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 24px;
+}
+
+.container {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.container div p:nth-child(2) {
+    color: hsl(184, 14%, 56%);
+}
+
+.results p {
+    color: hsl(189, 41%, 97%) ;
+    margin-right: 5px;
+}
+
+h2 {
+    color: hsl(172, 67%, 45%);
+    margin-left: auto;
+    font-size: 36px;
+    overflow: hidden;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border: none;
+    color: hsl(183, 100%, 15%);
+    background-color: hsl(172, 67%, 45%);
+    margin-top: auto;
+    font-size: 18px;
+}
+
+
+button:active {
+    background-color: hsl(172, 67%, 70%);
+}
+
+/* --------Mobil design------ */
+
+@media (max-width: 800px) {
+    
+    header p:nth-child(1) {
+        margin: 7vh auto 0px auto;
+    }
+    
+    .calculator {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .parametrers {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-row: repeat(2, 1fr);
+    }
+
+    .results {
+        width: 100%;
+    }
+
+    .second-text::after {
+        top: 85%;
+    }
+}
+
