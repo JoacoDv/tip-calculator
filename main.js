@@ -1,3 +1,4 @@
+const calculator = document.querySelector(".calculator")
 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 const customInput = document.getElementById('custom');
 const labels = document.querySelectorAll('.btn-percentage');
@@ -8,9 +9,31 @@ const tipPerPerson = document.getElementById("tip-person")
 const btnReset = document.getElementById("reset")
 const firstLabel = document.querySelector(".first-text")
 const secondLabel = document.querySelector(".second-text")
+const grid = document.querySelector(".grid")
 let amountValue
 let personsValue
 let percentage
+import { animate, scroll } from "https://cdn.jsdelivr.net/npm/motion@latest/+esm"
+
+
+//animations
+
+const calculatorCihlds = Array.from(calculator.children)
+animate(calculator, {y: [-50, 0]}, {ease:"easeOut", duration: .5})
+calculatorCihlds.forEach(children => {
+    animate(children, {x: [20, 0], opacity: [0,1], scale: [.6,1]}, {ease:"easeOut", duration: .5, delay: .5})
+})
+let timeDelay= .8
+Array.from(grid.children).forEach(btn => {
+    animate(btn,{y: [-20, 0], opacity: [0,1], scale: [.5, 1]}, {ease:"easeOut", duration: .3, delay: timeDelay})
+    timeDelay += .3
+})
+
+
+
+
+
+// Checkboxes marked
 
 checkboxes.forEach(checkbox => {
     checkbox.addEventListener('change', function() {
